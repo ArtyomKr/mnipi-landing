@@ -1,0 +1,33 @@
+@font-face {
+  font-family: 'Match';
+  src: url('./assets/fonts/MatchBold.ttf');
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('./assets/fonts/Montserrat.ttf');
+}
+
+@font-face {
+  font-family: 'Istok Web';
+  src: url('./assets/fonts/IstokWeb.ttf');
+}
+
+$bg-color: #EEEEEE;
+$primary-color: #B8C0C7;
+$primary-dark: #596168;
+$primary-light: #D2D2D2;
+$secondary-color: #005B9A;
+$secondary-dark: #495B6B;
+$secondary-light: #7791A9;
+$secondary-lighter: #006EBB;
+
+$poster-font: Match, sans-serif;
+$header-font: Montserrat, sans-serif;
+$description-font: Istok Web, sans-serif;
+
+h1 {
+  color: $primary-dark;
+  font-family: $poster-font;
+  color: $primary-light
+}
