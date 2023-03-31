@@ -13,10 +13,16 @@
   src: url('./assets/fonts/IstokWeb.ttf');
 }
 
+@font-face {
+  font-family: 'Roboto';
+  src: url('./assets/fonts/Roboto-Bold.ttf');
+}
+
 $bg-color: #EEEEEE;
 $primary-color: #B8C0C7;
+$primary-poster: #DEDDDD;
 $primary-dark: #596168;
-$primary-light: #D2D2D2;
+$primary-light: #D2D2D299;
 $secondary-color: #005B9A;
 $secondary-dark: #495B6B;
 $secondary-light: #7791A9;
@@ -25,6 +31,7 @@ $secondary-lighter: #006EBB;
 $poster-font: Match, sans-serif;
 $header-font: Montserrat, sans-serif;
 $description-font: Istok Web, sans-serif;
+$button-font: Roboto, sans-serif;
 
 * {
   box-sizing: border-box;
@@ -56,7 +63,7 @@ $description-font: Istok Web, sans-serif;
   }
 
   &__text {
-    color: $primary-light;
+    color: $primary-poster;
     font-family: $poster-font;
     font-size: 48px;
     line-height: 48px;
@@ -73,4 +80,60 @@ $description-font: Istok Web, sans-serif;
 
 .main-content {
   margin: 50px 0 0 50px;
+}
+
+.product {
+  &__subheader {
+    color: $primary-dark;
+    font-family: $header-font;
+    font-size: 24px;
+  }
+
+  &__header {
+    color: $primary-dark;
+    font-family: $header-font;
+    font-size: 54px;
+    line-height: 54px;
+  }
+
+  &__description {
+    font-family: $header-font;
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+
+  &__button {
+    display: block;
+    width: 90%;
+    padding: 6px 0 6px 0;
+    background: $secondary-color;
+    border-radius: 40px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    color: $bg-color;
+    font-family: $button-font;
+    text-decoration: none;
+    text-align: center;
+
+    &:active {
+      background: $primary-dark;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    margin: 10px 0 10px 0;
+  }
+}
+
+.text-bubble {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 70px;
+  gap: 8px;
+  background: $primary-light;
+  backdrop-filter: blur(3px);
+  border-radius: 144px;
 }
