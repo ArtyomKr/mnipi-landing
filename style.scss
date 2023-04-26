@@ -206,10 +206,17 @@ html {
     margin-bottom: 10px;
   }
 
+  &__company-name {
+    color: white;
+    font-size: 16px;
+    font-family: $header-font;
+    text-align: center;
+  }
+
   &__copyright {
     color: white;
-    font-family: $header-font;
     font-size: 12px;
+    font-family: $header-font;
     text-align: center;
   }
 
@@ -263,6 +270,8 @@ html {
   }
 
   .image-container {
+    margin: 30px 0 30px -50px;
+
     &__image {
       width: 85%;
     }
@@ -273,6 +282,7 @@ html {
     flex-direction: column;
     flex-direction: row;
     text-align: left;
+    padding: 40px 10px 40px 50px;
 
     &__point {
       align-items: flex-start;
@@ -280,10 +290,21 @@ html {
 
     &__header {
       font-size: 22px;
+      padding-bottom: 7px;
     }
 
     &__text {
       font-size: 14px;
+      padding-top: 5px;
+      padding-bottom: 10px;
+    }
+  }
+
+  .footer {
+    width: 75%;
+
+    &__img {
+      width: 235px;
     }
   }
 }
