@@ -85,7 +85,6 @@ html {
 
     &_bottom {
       max-height: 100%;
-      padding-top: 10px;
       writing-mode: vertical-rl;
     }
   }
@@ -235,6 +234,7 @@ html {
     &__logo {
       width: 70px;
       height: 70px;
+      margin: 0 15px;
     }
 
     &__text {
@@ -244,7 +244,7 @@ html {
   }
 
   .main-content {
-    margin: 90px 0 0 90px;
+    margin: 100px 0 0 100px;
   }
 
   .product {
@@ -278,11 +278,14 @@ html {
   }
 
   .text-bubble {
+    width: 100%;
     display: flex;
     flex-direction: column;
     flex-direction: row;
     text-align: left;
-    padding: 40px 10px 40px 50px;
+    padding: 45px 10px 45px 50px;
+    margin-bottom: 50px;
+    gap: 10px;
 
     &__point {
       align-items: flex-start;
@@ -303,8 +306,18 @@ html {
   .footer {
     width: 75%;
 
+    &__container {
+      display: flex;
+      justify-content: space-evenly;
+    }
+
     &__img {
       width: 235px;
+      margin: 0;
+    }
+
+    &__company-name {
+      font-size: 24px;
     }
   }
 }
