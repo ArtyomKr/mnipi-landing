@@ -47,6 +47,9 @@ html {
 }
 
 .body {
+  max-width: 1440px;
+  margin: auto;
+  overflow-x: hidden;
   background-color: $bg-color;
 }
 
@@ -56,7 +59,7 @@ html {
 
 .poster-sides {
   position: absolute;
-  z-index: -1;
+  z-index: -2;
   height: 99%;
   max-width: 100%;
 
@@ -119,7 +122,7 @@ html {
   &__button {
     display: block;
     width: 90%;
-    padding: 6px 0 6px 0;
+    padding: 6px 0;
     background: $secondary-color;
     border-radius: 40px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -152,6 +155,7 @@ html {
   display: flex;
   justify-content: center;
   margin: 20px 0 20px -50px;
+  z-index: -1;
 
   &__image {
     width: 100%;
@@ -346,6 +350,18 @@ html {
   }
 
   .product {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+
+    &__text-container {
+      flex-basis: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      text-align: end;
+    }
+
     &__subheader {
       font-size: 48px;
     }
@@ -361,17 +377,26 @@ html {
     }
 
     &__button {
-      width: 345px;
+      width: 445px;
       margin-top: 35px;
-      font-size: 24px;
+      padding: 12px 0;
+      font-size: 32px;
     }
   }
 
   .image-container {
-    margin: 30px 0 30px -50px;
+    position: absolute;
+    width: 100%;
+    margin: 0;
+    justify-content: end;
 
     &__image {
       width: 60%;
     }
+  }
+
+  .text-bubble {
+    width: 70%;
+    margin-top: 90px;
   }
 }
