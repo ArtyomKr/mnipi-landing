@@ -42,29 +42,25 @@ $button-font: Roboto, sans-serif;
   padding: 0;
 }
 
-html {
-  position:relative;
-}
-
 .body {
-  max-width: 1440px;
-  margin: auto;
   overflow-x: hidden;
   background-color: $bg-color;
 }
 
 .main-container {
+  position: relative;
+  max-width: 1440px;
+  margin: 0 auto;
   padding-top: 5px;
 }
 
 .poster-sides {
   position: absolute;
   z-index: -2;
-  height: 99%;
-  max-width: 100%;
+  height: 100%;
+  max-width: calc(100vw - (100vw - 100%));
 
   &__top {
-    max-width: 100vw;
     display: flex;
     align-items: center;
   }
@@ -78,16 +74,18 @@ html {
   }
 
   &__text {
+    $text-height: 48px;
+
     color: $primary-poster;
     font-family: $poster-font;
-    font-size: 48px;
-    line-height: 48px;
+    font-size: $text-height;
+    line-height: $text-height;
     text-transform: uppercase;
     overflow: hidden;
     white-space: nowrap;
 
     &_bottom {
-      max-height: 100%;
+      max-height: calc(100% - $text-height);
       writing-mode: vertical-rl;
     }
   }
@@ -98,6 +96,8 @@ html {
 }
 
 .product {
+  margin-bottom: 20px;
+
   &__subheader {
     color: $primary-dark;
     font-family: $header-font;
@@ -143,7 +143,7 @@ html {
       flex-direction: column;
       align-items: flex-end;
       text-align: end;
-  
+
       .text-bubble {
         align-self: flex-start;
       }
@@ -165,7 +165,6 @@ html {
 .text-bubble {
   width: 90%;
   text-align: center;
-  margin-bottom: 20px;
   padding: 40px 30px;
   font-family: $header-font;
   background: $primary-light;
@@ -200,6 +199,7 @@ html {
   margin: auto;
   background: $secondary-color;
   box-shadow: $shadow-blue;
+  margin-bottom: 10px;
   border-radius: 10px;
 
   &__container {
@@ -215,6 +215,7 @@ html {
     color: white;
     font-size: 16px;
     font-family: $header-font;
+    font-weight: 500;
     text-align: center;
   }
 
@@ -244,8 +245,14 @@ html {
     }
 
     &__text {
+      $text-height: 100px;
+
       font-size: 84px;
-      line-height: 100px;
+      line-height: $text-height;
+
+      &_bottom {
+        max-height: calc(100% - $text-height);
+      }
     }
   }
 
@@ -254,6 +261,8 @@ html {
   }
 
   .product {
+    margin-bottom: 50px;
+
     &__subheader {
       font-size: 36px;
     }
@@ -290,7 +299,6 @@ html {
     flex-direction: row;
     text-align: left;
     padding: 45px 10px 45px 50px;
-    margin-bottom: 50px;
     gap: 10px;
 
     &__point {
@@ -353,6 +361,7 @@ html {
     position: relative;
     display: flex;
     flex-wrap: wrap;
+    margin-bottom: 80px;
 
     &__text-container {
       flex-basis: 50%;
@@ -382,6 +391,18 @@ html {
       padding: 12px 0;
       font-size: 32px;
     }
+
+    &:nth-child(even) {
+      flex-direction: row-reverse;
+
+      .image-container {
+        justify-content: start;
+
+        &__image {
+          width: 70%;
+        }
+      }
+    }
   }
 
   .image-container {
@@ -397,6 +418,27 @@ html {
 
   .text-bubble {
     width: 70%;
+    min-width: 700px;
     margin-top: 90px;
+    padding-left: 70px;
+
+    &__header {
+      font-size: 24px;
+    }
+
+    &__text {
+      font-size: 16px;
+      padding-top: 15px;
+    }
+  }
+
+  .footer {
+    &__company-name {
+      font-size: 26px;
+    }
+
+    &__copyright {
+      font-size: 14px;
+    }
   }
 }
