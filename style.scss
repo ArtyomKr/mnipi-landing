@@ -97,7 +97,11 @@ $button-font: Roboto, sans-serif;
 }
 
 .product {
+  position: relative;
   margin-bottom: 20px;
+  transform: translateY(150px);
+  opacity: 0;
+  transition: 2s all ease;
 
   &__subheader {
     color: $primary-dark;
@@ -149,6 +153,11 @@ $button-font: Roboto, sans-serif;
         align-self: flex-start;
       }
     }
+  }
+
+  &_revealed {
+    transform: translateY(0);
+    opacity: 1;
   }
 }
 
