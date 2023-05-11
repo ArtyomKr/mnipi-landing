@@ -13,21 +13,442 @@
   src: url('./assets/fonts/IstokWeb.ttf');
 }
 
+@font-face {
+  font-family: 'Roboto';
+  src: url('./assets/fonts/Roboto-Bold.ttf');
+}
+
 $bg-color: #EEEEEE;
 $primary-color: #B8C0C7;
+$primary-poster: #DEDDDD;
 $primary-dark: #596168;
-$primary-light: #D2D2D2;
+$primary-light: #D2D2D299;
 $secondary-color: #005B9A;
 $secondary-dark: #495B6B;
 $secondary-light: #7791A9;
 $secondary-lighter: #006EBB;
+$dark: #363830;
+
+$shadow-blue: 10px 10px 0px $secondary-lighter;
 
 $poster-font: Match, sans-serif;
 $header-font: Montserrat, sans-serif;
 $description-font: Istok Web, sans-serif;
+$button-font: Roboto, sans-serif;
 
-h1 {
-  color: $primary-dark;
-  font-family: $poster-font;
-  color: $primary-light
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.body {
+  overflow-x: hidden;
+  background-color: $bg-color;
+}
+
+.main-container {
+  position: relative;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding-top: 5px;
+  padding-left: 5px;
+}
+
+.poster-sides {
+  position: absolute;
+  max-width: calc(100% - 10px + (100vw - 100%) / 2);
+  z-index: -2;
+  height: 100%;
+
+  &__top {
+    display: flex;
+    align-items: center;
+  }
+
+  &__logo {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    margin: 0 5px;
+    background: url("./assets/svg/circle_logo.svg") center/contain no-repeat;
+  }
+
+  &__text {
+    $text-height: 48px;
+
+    color: $primary-poster;
+    font-family: $poster-font;
+    font-size: $text-height;
+    line-height: $text-height;
+    text-transform: uppercase;
+    overflow: hidden;
+    white-space: nowrap;
+
+    &_bottom {
+      max-height: calc(100% - $text-height);
+      writing-mode: vertical-rl;
+    }
+  }
+}
+
+.main-content {
+  margin: 50px 0 0 50px;
+}
+
+.product {
+  position: relative;
+  margin-bottom: 20px;
+  transform: translateY(150px);
+  opacity: 0;
+  transition: 2s all ease;
+
+  &__subheader {
+    color: $primary-dark;
+    font-family: $header-font;
+    font-size: 24px;
+  }
+
+  &__header {
+    padding-bottom: 5px;
+    color: $primary-dark;
+    font-family: $header-font;
+    font-size: 54px;
+    line-height: 54px;
+  }
+
+  &__description {
+    width: 90%;
+    font-family: $header-font;
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+
+  &__button {
+    display: block;
+    width: 90%;
+    padding: 6px 0;
+    background: $secondary-color;
+    border-radius: 40px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    color: $bg-color;
+    font-family: $button-font;
+    text-decoration: none;
+    text-align: center;
+    transition: 1s;
+
+    &:hover {
+      background: $secondary-lighter;
+    }
+  }
+
+  &:nth-child(even) {
+    .product__text-container {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      text-align: end;
+
+      .text-bubble {
+        align-self: flex-start;
+      }
+    }
+  }
+
+  &_revealed {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0 20px -50px;
+  z-index: -1;
+
+  &__image {
+    width: 100%;
+  }
+}
+
+.text-bubble {
+  width: 90%;
+  text-align: center;
+  padding: 40px 30px;
+  font-family: $header-font;
+  background: $primary-light;
+  color: $dark;
+  backdrop-filter: blur(3px);
+  border-radius: 144px;
+
+  &__point {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__header {
+    font-size: 16px;
+  }
+
+  &__text {
+    font-size: 12px;
+    padding-bottom: 20px;
+  }
+
+  &__divider {
+    width: 38px;
+    border: 2px solid $dark;
+    margin: 5px 0;
+  }
+}
+
+.footer {
+  width: 66%;
+  margin: auto;
+  background: $secondary-color;
+  box-shadow: $shadow-blue;
+  margin-bottom: 10px;
+  border-radius: 10px;
+
+  &__container {
+    padding: 12px 10px;
+  }
+
+  &__img {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  &__company-name {
+    color: white;
+    font-size: 16px;
+    font-family: $header-font;
+    font-weight: 500;
+    text-align: center;
+  }
+
+  &__copyright {
+    color: white;
+    font-size: 12px;
+    font-family: $header-font;
+    text-align: center;
+  }
+
+  &__link {
+    font-weight: 700;
+    text-decoration: none;
+
+    &:visited {
+      color: white;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .poster-sides {
+    &__logo {
+      width: 70px;
+      height: 70px;
+      margin: 0 15px;
+    }
+
+    &__text {
+      $text-height: 100px;
+
+      font-size: 84px;
+      line-height: $text-height;
+
+      &_bottom {
+        max-height: calc(100% - $text-height);
+      }
+    }
+  }
+
+  .main-content {
+    margin: 100px 0 0 100px;
+  }
+
+  .product {
+    margin-bottom: 50px;
+
+    &__subheader {
+      font-size: 36px;
+    }
+
+    &__header {
+      font-size: 76px;
+      line-height: 90px;
+    }
+
+    &__description {
+      font-size: 20px;
+      line-height: 30px;
+    }
+
+    &__button {
+      width: 345px;
+      margin-top: 35px;
+      font-size: 24px;
+    }
+  }
+
+  .image-container {
+    margin: 30px 0 30px -50px;
+
+    &__image {
+      width: 85%;
+    }
+  }
+
+  .text-bubble {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-direction: row;
+    text-align: left;
+    padding: 45px 30px 45px 50px;
+    gap: 10px;
+
+    &__point {
+      align-items: flex-start;
+    }
+
+    &__header {
+      font-size: 22px;
+      padding-bottom: 7px;
+    }
+
+    &__text {
+      font-size: 14px;
+      padding-top: 5px;
+      padding-bottom: 10px;
+    }
+  }
+
+  .footer {
+    width: 75%;
+
+    &__container {
+      display: flex;
+      justify-content: space-evenly;
+    }
+
+    &__img {
+      width: 235px;
+      margin: 0;
+    }
+
+    &__company-name {
+      font-size: 24px;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .poster-sides {
+    &__logo {
+      width: 80px;
+      height: 80px;
+      margin: 0 20px;
+    }
+
+    &__text {
+      font-size: 96px;
+
+      &_bottom {
+        padding-top: 20px;
+      }
+    }
+  }
+
+  .main-content {
+    margin: 120px 0 0 120px;
+  }
+
+  .product {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 80px;
+
+    &__text-container {
+      flex-basis: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      text-align: end;
+    }
+
+    &__subheader {
+      font-size: 48px;
+    }
+
+    &__header {
+      font-size: 96px;
+      line-height: 110px;
+    }
+
+    &__description {
+      font-size: 24px;
+      line-height: 35px;
+    }
+
+    &__button {
+      width: 445px;
+      margin-top: 35px;
+      padding: 12px 0;
+      font-size: 32px;
+    }
+
+    &:nth-child(even) {
+      flex-direction: row-reverse;
+
+      .image-container {
+        justify-content: start;
+
+        &__image {
+          width: 58%;
+        }
+      }
+    }
+  }
+
+  .image-container {
+    position: absolute;
+    width: 100%;
+    margin: 0;
+    justify-content: end;
+
+    &__image {
+      width: 50%;
+    }
+  }
+
+  .text-bubble {
+    width: 70%;
+    min-width: 700px;
+    margin-top: 90px;
+    padding-left: 70px;
+
+    &__header {
+      font-size: 24px;
+    }
+
+    &__text {
+      font-size: 16px;
+      padding-top: 15px;
+    }
+  }
+
+  .footer {
+    &__company-name {
+      font-size: 26px;
+    }
+
+    &__copyright {
+      font-size: 14px;
+    }
+  }
 }
