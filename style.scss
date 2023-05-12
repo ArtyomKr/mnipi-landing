@@ -142,19 +142,6 @@ $button-font: Roboto, sans-serif;
     }
   }
 
-  &:nth-child(even) {
-    .product__text-container {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      text-align: end;
-
-      .text-bubble {
-        align-self: flex-start;
-      }
-    }
-  }
-
   &_revealed {
     transform: translateY(0);
     opacity: 1;
@@ -291,6 +278,19 @@ $button-font: Roboto, sans-serif;
       width: 345px;
       margin-top: 35px;
       font-size: 24px;
+    }
+
+    &:nth-child(even) {
+      .product__text-container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        text-align: end;
+  
+        .text-bubble {
+          align-self: flex-start;
+        }
+      }
     }
   }
 
