@@ -185,9 +185,7 @@
 .footer__link {
   font-weight: 700;
   text-decoration: none;
-}
-.footer__link:visited {
-  color: white;
+  color: #fff;
 }
 
 @media (min-width: 768px) {
