@@ -7,10 +7,6 @@
   src: url("./assets/fonts/Montserrat.ttf");
 }
 @font-face {
-  font-family: "Istok Web";
-  src: url("./assets/fonts/IstokWeb.ttf");
-}
-@font-face {
   font-family: "Roboto";
   src: url("./assets/fonts/Roboto-Bold.ttf");
 }
@@ -29,15 +25,14 @@
   position: relative;
   max-width: 1440px;
   margin: 0 auto;
-  padding-top: 5px;
-  padding-left: 5px;
+  padding: 5px 0 20px 5px;
 }
 
 .poster-sides {
   position: absolute;
   max-width: calc(100% - 10px + (100vw - 100%) / 2);
   z-index: -2;
-  height: 100%;
+  height: calc(100% - 20px);
 }
 .poster-sides__top {
   display: flex;
@@ -159,7 +154,6 @@
   margin: auto;
   background: #005B9A;
   box-shadow: 10px 10px 0px #006EBB;
-  margin-bottom: 10px;
   border-radius: 10px;
 }
 .footer__container {
@@ -284,6 +278,7 @@
     font-size: 96px;
   }
   .poster-sides__text_bottom {
+    padding-left: 10px;
     padding-top: 20px;
   }
   .main-content {

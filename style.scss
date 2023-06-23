@@ -9,11 +9,6 @@
 }
 
 @font-face {
-  font-family: 'Istok Web';
-  src: url('./assets/fonts/IstokWeb.ttf');
-}
-
-@font-face {
   font-family: 'Roboto';
   src: url('./assets/fonts/Roboto-Bold.ttf');
 }
@@ -33,7 +28,6 @@ $shadow-blue: 10px 10px 0px $secondary-lighter;
 
 $poster-font: Match, sans-serif;
 $header-font: Montserrat, sans-serif;
-$description-font: Istok Web, sans-serif;
 $button-font: Roboto, sans-serif;
 
 * {
@@ -51,15 +45,14 @@ $button-font: Roboto, sans-serif;
   position: relative;
   max-width: 1440px;
   margin: 0 auto;
-  padding-top: 5px;
-  padding-left: 5px;
+  padding: 5px 0 20px 5px;
 }
 
 .poster-sides {
   position: absolute;
   max-width: calc(100% - 10px + (100vw - 100%) / 2);
   z-index: -2;
-  height: 100%;
+  height: calc(100% - 20px);
 
   &__top {
     display: flex;
@@ -196,7 +189,6 @@ $button-font: Roboto, sans-serif;
   margin: auto;
   background: $secondary-color;
   box-shadow: $shadow-blue;
-  margin-bottom: 10px;
   border-radius: 10px;
 
   &__container {
@@ -355,6 +347,7 @@ $button-font: Roboto, sans-serif;
       font-size: 96px;
 
       &_bottom {
+        padding-left: 10px;
         padding-top: 20px;
       }
     }
